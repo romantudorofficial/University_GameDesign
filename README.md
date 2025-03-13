@@ -15,7 +15,7 @@
 
 ### Weeks 1 - 3:
 
-- chose game theme
+- chose game theme, name, genre, type and technologies needed
 
 
 ### Week 4:
