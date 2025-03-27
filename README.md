@@ -2,7 +2,7 @@
 
 ## Description of the Game
 
-- Name: Hard to Choose a Name
+- Name: Bario
 - Genre: action
 - Type: platformer
 - Inspiration: Mario games
@@ -10,14 +10,22 @@
 
 
 
+## How to Run
+
+- open the "bario" folder
+- open the terminal
+- run the "python main.py" command
+
+
+
 ## Work Progress
 
 
-### Weeks 1 - 3:
+### Weeks 1 - 4:
 
 - chose game theme, name, genre, type and technologies needed
 
 
-### Week 4:
+### Week 5:
 
-- to add
+- created working prototype
