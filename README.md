@@ -29,3 +29,8 @@
 ### Week 5:
 
 - created working prototype
+
+
+### Week 6:
+
+- 
