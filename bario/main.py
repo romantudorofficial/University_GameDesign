@@ -1,8 +1,12 @@
 import pygame
 import sys
 
+
+
 # Initialize pygame
 pygame.init()
+
+
 
 # Screen settings
 SCREEN_WIDTH = 1024
@@ -11,6 +15,8 @@ SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Multi-Level Platformer")
 CLOCK = pygame.time.Clock()
 FPS = 60
+
+
 
 # Default Colors
 WHITE   = (255, 255, 255)
@@ -31,12 +37,8 @@ GRAVITY = 0.5
 FONT = pygame.font.SysFont('Arial', 24)
 MESSAGE_FONT = pygame.font.SysFont('Arial', 48)
 
-# Level configuration data.
-# Each level now defines custom colors (optional) and:
-#   - "platforms": list of tuples (x, y, width, height)
-#   - "collectibles": list of tuples (x, y) for normal collectibles.
-#   - "special_collectible": a tuple (x, y) for the special collectible.
-#   - "timer": time limit in seconds.
+
+
 levels = [
     {
         "platforms": [
@@ -88,13 +90,18 @@ levels = [
     }
 ]
 
-def total_normal_collectibles(level_config):
+
+
+def total_normal_collectibles (level_config):
+    
     return len(level_config["collectibles"])
 
-# --- Sprite Classes ---
 
-class Player(pygame.sprite.Sprite):
-    def __init__(self, x, y):
+
+class Player (pygame.sprite.Sprite):
+
+    def __init__ (self, x, y):
+
         super().__init__()
         self.width = 30
         self.height = 30
@@ -107,7 +114,9 @@ class Player(pygame.sprite.Sprite):
         self.jump_strength = 12
         self.on_ground = False
 
+
     def update(self, platforms):
+
         keys = pygame.key.get_pressed()
         self.velocity_x = 0
         if keys[pygame.K_LEFT]:
@@ -133,7 +142,9 @@ class Player(pygame.sprite.Sprite):
                                     SCREEN_HEIGHT - 2 * BORDER_THICKNESS)
         self.rect.clamp_ip(playable_rect)
 
+
     def handle_horizontal_collisions(self, platforms):
+
         for plat in platforms:
             if self.rect.colliderect(plat.rect):
                 if self.velocity_x > 0:
@@ -141,7 +152,9 @@ class Player(pygame.sprite.Sprite):
                 elif self.velocity_x < 0:
                     self.rect.left = plat.rect.right
 
+
     def handle_vertical_collisions(self, platforms):
+
         self.on_ground = False
         for plat in platforms:
             if self.rect.colliderect(plat.rect):
@@ -153,27 +166,41 @@ class Player(pygame.sprite.Sprite):
                     self.rect.top = plat.rect.bottom
                     self.velocity_y = 0
 
-class Platform(pygame.sprite.Sprite):
-    def __init__(self, x, y, width, height, color=GREEN):
+
+
+class Platform (pygame.sprite.Sprite):
+
+    def __init__ (self, x, y, width, height, color=GREEN):
+
         super().__init__()
         self.image = pygame.Surface((width, height))
         self.image.fill(color)
         self.rect = self.image.get_rect(topleft=(x, y))
 
-class Collectible(pygame.sprite.Sprite):
-    def __init__(self, x, y, size=20, color=YELLOW):
+
+
+class Collectible (pygame.sprite.Sprite):
+
+    def __init__ (self, x, y, size=20, color=YELLOW):
+
         super().__init__()
         self.size = size
         self.image = pygame.Surface((self.size, self.size))
         self.image.fill(color)
         self.rect = self.image.get_rect(center=(x, y))
 
-class SpecialCollectible(Collectible):
-    def __init__(self, x, y, color=PURPLE):
+
+
+class SpecialCollectible (Collectible):
+
+    def __init__ (self, x, y, color=PURPLE):
+
         super().__init__(x, y, size=25, color=color)
 
-# --- Level Runner Function ---
-def run_level(level_config, level_number):
+
+
+def run_level (level_config, level_number):
+
     # Retrieve custom colors from the level config (or use defaults)
     bg_color       = level_config.get("background_color", WHITE)
     plat_color     = level_config.get("platform_color", GREEN)
@@ -183,7 +210,7 @@ def run_level(level_config, level_number):
     
     # Create groups for this level
     all_sprites = pygame.sprite.Group()
-    safe_platforms = pygame.sprite.Group()  # platforms where the player can stand
+    safe_platforms = pygame.sprite.Group()
     collectible_group = pygame.sprite.Group()
     special_group = pygame.sprite.Group()
 
@@ -231,6 +258,7 @@ def run_level(level_config, level_number):
     level_lose = False
 
     while level_running:
+
         CLOCK.tick(FPS)
         current_ticks = pygame.time.get_ticks()
         elapsed_seconds = (current_ticks - start_ticks) / 1000
@@ -301,6 +329,7 @@ def run_level(level_config, level_number):
                             if restart_button.collidepoint(pygame.mouse.get_pos()):
                                 return "lose"
         else:
+
             SCREEN.fill(bg_color)
             all_sprites.draw(SCREEN)
             # UI elements: timer, collectibles counter, level number.
@@ -318,16 +347,24 @@ def run_level(level_config, level_number):
 
     return "lose"
 
-# --- Main Game Loop ---
-def main():
+
+
+def main ():
+
     current_level_index = 0
+
     while True:
+
         result = run_level(levels[current_level_index], current_level_index + 1)
+
         if result == "win":
-            # If final level is complete, show final win screen with restart button.
+            
             if current_level_index == len(levels) - 1:
+
                 finished = False
+
                 while not finished:
+
                     SCREEN.fill(WHITE)
                     pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
                     final_text = MESSAGE_FONT.render("You Win the Game!", True, BLUE)
@@ -339,6 +376,7 @@ def main():
                     restart_text_rect = restart_text.get_rect(center=restart_button.center)
                     SCREEN.blit(restart_text, restart_text_rect)
                     pygame.display.flip()
+
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             pygame.quit()
@@ -346,11 +384,18 @@ def main():
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             if restart_button.collidepoint(pygame.mouse.get_pos()):
                                 finished = True
-                                current_level_index = 0  # Restart from level 1
+                                current_level_index = 0
+
             else:
                 current_level_index += 1
+
         elif result == "lose":
+
             current_level_index = 0
 
+
+
 if __name__ == "__main__":
+
+    # Run the game.
     main()
