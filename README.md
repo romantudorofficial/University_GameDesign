@@ -33,4 +33,4 @@
 
 ### Week 6:
 
-- 
+- implemented timer, levels, collectibles and scores
