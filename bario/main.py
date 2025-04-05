@@ -3,22 +3,22 @@ import sys
 
 
 
-# Initialize pygame
+# Initialize pygame.
 pygame.init()
 
 
 
-# Screen settings
-SCREEN_WIDTH = 1024
-SCREEN_HEIGHT = 768
+# Set the screen settings.
+SCREEN_WIDTH = 1800
+SCREEN_HEIGHT = 900
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Multi-Level Platformer")
+pygame.display.set_caption("Bario")
 CLOCK = pygame.time.Clock()
 FPS = 60
 
 
 
-# Default Colors
+# Set the default colors.
 WHITE   = (255, 255, 255)
 BLACK   = (0, 0, 0)
 BLUE    = (50, 100, 255)
@@ -27,13 +27,19 @@ RED     = (255, 50, 50)
 YELLOW  = (255, 255, 0)
 PURPLE  = (128, 0, 128)
 
-# Border thickness (in pixels)
+
+
+# Set the border thickness.
 BORDER_THICKNESS = 5
 
-# Gravity setting
+
+
+# Set the gravity factor.
 GRAVITY = 0.5
 
-# Fonts for UI
+
+
+# Set the fonts.
 FONT = pygame.font.SysFont('Arial', 24)
 MESSAGE_FONT = pygame.font.SysFont('Arial', 48)
 
@@ -50,13 +56,13 @@ levels = [
             (900, 600, 150, 20)
         ],
         "collectibles": [
-            (175, 635),  # centered above first platform (100+75, 650-15)
-            (335, 625),  # second platform
-            (495, 615),  # third platform
-            (655, 605),  # fourth platform
-            (815, 595)   # fifth platform
+            (175, 635),
+            (335, 625),
+            (495, 615),
+            (655, 605),
+            (815, 595)
         ],
-        "special_collectible": (975, 585),  # on sixth platform
+        "special_collectible": (975, 585),
         "timer": 30,
         "background_color": WHITE,
         "platform_color": GREEN,
@@ -74,19 +80,19 @@ levels = [
             (750, 500, 150, 20)
         ],
         "collectibles": [
-            (175, 685),  # first platform
-            (375, 645),  # second platform
-            (575, 605),  # third platform
-            (775, 565),  # fourth platform
-            (975, 525)   # fifth platform
+            (175, 685),
+            (375, 645),
+            (575, 605),
+            (775, 565),
+            (975, 525)
         ],
-        "special_collectible": (825, 485),  # on sixth platform
+        "special_collectible": (825, 485),
         "timer": 25,
-        "background_color": (230, 230, 255),  # a light blueish background
-        "platform_color": (0, 200, 0),          # a darker green
-        "collectible_color": (255, 200, 0),       # an orange-yellow
-        "special_collectible_color": (200, 0, 200), # a magenta-ish purple
-        "lava_color": (200, 0, 0)               # a darker red for lava
+        "background_color": (230, 230, 255),
+        "platform_color": (0, 200, 0),
+        "collectible_color": (255, 200, 0),
+        "special_collectible_color": (200, 0, 200),
+        "lava_color": (200, 0, 0)
     }
 ]
 
@@ -115,7 +121,7 @@ class Player (pygame.sprite.Sprite):
         self.on_ground = False
 
 
-    def update(self, platforms):
+    def update (self, platforms):
 
         keys = pygame.key.get_pressed()
         self.velocity_x = 0
@@ -143,7 +149,7 @@ class Player (pygame.sprite.Sprite):
         self.rect.clamp_ip(playable_rect)
 
 
-    def handle_horizontal_collisions(self, platforms):
+    def handle_horizontal_collisions (self, platforms):
 
         for plat in platforms:
             if self.rect.colliderect(plat.rect):
@@ -153,7 +159,7 @@ class Player (pygame.sprite.Sprite):
                     self.rect.left = plat.rect.right
 
 
-    def handle_vertical_collisions(self, platforms):
+    def handle_vertical_collisions (self, platforms):
 
         self.on_ground = False
         for plat in platforms:
