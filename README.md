@@ -34,3 +34,8 @@
 ### Week 6:
 
 - implemented timer, levels, collectibles and scores
+
+
+### Week 7:
+
+- improved game

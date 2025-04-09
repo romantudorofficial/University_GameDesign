@@ -176,32 +176,32 @@ class Player (pygame.sprite.Sprite):
 
 class Platform (pygame.sprite.Sprite):
 
-    def __init__ (self, x, y, width, height, color=GREEN):
+    def __init__ (self, x, y, width, height, color = GREEN):
 
         super().__init__()
         self.image = pygame.Surface((width, height))
         self.image.fill(color)
-        self.rect = self.image.get_rect(topleft=(x, y))
+        self.rect = self.image.get_rect(topleft = (x, y))
 
 
 
 class Collectible (pygame.sprite.Sprite):
 
-    def __init__ (self, x, y, size=20, color=YELLOW):
+    def __init__ (self, x, y, size = 20, color = YELLOW):
 
         super().__init__()
         self.size = size
         self.image = pygame.Surface((self.size, self.size))
         self.image.fill(color)
-        self.rect = self.image.get_rect(center=(x, y))
+        self.rect = self.image.get_rect(center = (x, y))
 
 
 
 class SpecialCollectible (Collectible):
 
-    def __init__ (self, x, y, color=PURPLE):
+    def __init__ (self, x, y, color = PURPLE):
 
-        super().__init__(x, y, size=25, color=color)
+        super().__init__(x, y, size = 25, color = color)
 
 
 
