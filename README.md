@@ -39,3 +39,8 @@
 ### Week 7:
 
 - improved game
+
+
+### TO ADD:
+- add more leveles
+- optimize timer duration and increase level difficulty
