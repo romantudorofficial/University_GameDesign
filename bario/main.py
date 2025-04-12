@@ -103,10 +103,10 @@ levels = [
         "special_collectible": (975, 585),
         "timer": 30,
         "gravity": 0.5,
-        "background_color": DARK_BROWN,
-        "platform_color": CHOCOLATE,
-        "collectible_color": GOLDENROD,
-        "special_collectible_color": DARK_ORANGE,
+        "background_color": SADDLE_BROWN,
+        "platform_color": DARK_SLATE_GRAY,
+        "collectible_color": GOLD,
+        "special_collectible_color": ORANGE_RED,
         "lava_color": FIREBRICK
     },
     {
@@ -576,6 +576,19 @@ class SpecialCollectible (Collectible):
 
 
 
+def wait_for_key_release():
+    # Wait until no key is pressed.
+    waiting = True
+    while waiting:
+        pygame.event.pump()  # update the internal state
+        keys = pygame.key.get_pressed()
+        if not any(keys):  # if no key is pressed
+            waiting = False
+        CLOCK.tick(FPS)
+
+
+
+
 def run_level(level_config, level_number):
     # Retrieve custom colors from the level config (or use defaults)
     bg_color       = level_config.get("background_color", WHITE)
@@ -711,13 +724,22 @@ def run_level(level_config, level_number):
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_pos = pygame.mouse.get_pos()
                             if restart_level_button.collidepoint(mouse_pos):
+                                wait_for_key_release()
                                 return "restart_level"
                             if restart_game_button.collidepoint(mouse_pos):
+                                wait_for_key_release()
                                 return "lose"
-                        # New key press check for spacebar or enter.
                         if event.type == pygame.KEYDOWN:
-                            if event.key in (pygame.K_SPACE, pygame.K_RETURN):
+                            # SPACE => restart current level.
+                            if event.key == pygame.K_SPACE:
+                                wait_for_key_release()
                                 return "restart_level"
+                            # ENTER => restart game (from level 1).
+                            elif event.key == pygame.K_RETURN:
+                                wait_for_key_release()
+                                return "lose"
+
+
         else:
             SCREEN.fill(bg_color)
             all_sprites.draw(SCREEN)
@@ -742,29 +764,60 @@ def main():
     while True:
         result = run_level(levels[current_level_index], current_level_index + 1)
         if result == "win":
-            # If final level is complete, show final win screen with restart button.
             if current_level_index == len(levels) - 1:
                 finished = False
                 while not finished:
+                    # Fill the screen with background (using WHITE or any default) then draw the border.
                     SCREEN.fill(WHITE)
                     pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
+                    
+                    # Display final win message.
                     final_text = MESSAGE_FONT.render("You Win the Game!", True, BLUE)
-                    text_rect = final_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
+                    text_rect = final_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 40))
                     SCREEN.blit(final_text, text_rect)
-                    restart_button = pygame.Rect(SCREEN_WIDTH // 2 - 75, SCREEN_HEIGHT // 2 + 60, 150, 40)
-                    pygame.draw.rect(SCREEN, BLUE, restart_button)
-                    restart_text = FONT.render("Restart", True, WHITE)
-                    restart_text_rect = restart_text.get_rect(center=restart_button.center)
-                    SCREEN.blit(restart_text, restart_text_rect)
+                    
+                    # Create two buttons.
+                    # Left button: Restart Game (from beginning)
+                    restart_game_button  = pygame.Rect(SCREEN_WIDTH//2 - 200, SCREEN_HEIGHT//2 + 60, 150, 40)
+                    # Right button: Replay Last Level
+                    restart_level_button = pygame.Rect(SCREEN_WIDTH//2 + 50, SCREEN_HEIGHT//2 + 60, 150, 40)
+                    
+                    pygame.draw.rect(SCREEN, BLUE, restart_game_button)
+                    pygame.draw.rect(SCREEN, BLUE, restart_level_button)
+                    
+                    restart_game_text  = FONT.render("Restart Game", True, WHITE)
+                    restart_level_text = FONT.render("Replay Last", True, WHITE)
+                    
+                    SCREEN.blit(restart_game_text, restart_game_text.get_rect(center=restart_game_button.center))
+                    SCREEN.blit(restart_level_text, restart_level_text.get_rect(center=restart_level_button.center))
+                    
                     pygame.display.flip()
+                    
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             pygame.quit()
                             sys.exit()
                         if event.type == pygame.MOUSEBUTTONDOWN:
-                            if restart_button.collidepoint(pygame.mouse.get_pos()):
+                            mouse_pos = pygame.mouse.get_pos()
+                            if restart_game_button.collidepoint(mouse_pos):
+                                wait_for_key_release()
+                                finished = True
+                                current_level_index = 0  # Restart from beginning.
+                            elif restart_level_button.collidepoint(mouse_pos):
+                                wait_for_key_release()
+                                finished = True
+                                # Keep current_level_index as-is to replay last level.
+                        if event.type == pygame.KEYDOWN:
+                            # If ENTER is pressed, restart from beginning.
+                            if event.key == pygame.K_RETURN:
+                                wait_for_key_release()
                                 finished = True
                                 current_level_index = 0
+                            # If SPACE is pressed, replay the last level.
+                            elif event.key == pygame.K_SPACE:
+                                wait_for_key_release()
+                                finished = True
+                # End of final win branch.
             else:
                 current_level_index += 1
         elif result == "lose":
