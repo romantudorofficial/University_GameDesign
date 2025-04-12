@@ -39,8 +39,11 @@
 ### Week 7:
 
 - improved game
+- added 13 more levels
+- added possibility to start again the game from the same level if you lose
+- improved design
 
 
 ### TO ADD:
-- add more leveles
-- optimize timer duration and increase level difficulty
+
+- optimize timer duration and platform positions

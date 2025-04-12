@@ -59,6 +59,12 @@ LIGHT_SLATE_GRAY = (119, 136, 153)
 CHARTREUSE       = (127, 255, 0)
 FUCHSIA          = (255, 0, 255)
 
+DARK_BROWN     = (101, 67, 33)     # A deep brown for the background.
+CHOCOLATE      = (123, 63, 0)      # A medium–dark brown for the platforms.
+GOLDENROD      = (218, 165, 32)    # A warm mustard yellow for the collectibles.
+DARK_ORANGE    = (255, 140, 0)     # A deep, rich orange for the special collectible.
+FIREBRICK      = (178, 34, 34)     # A dark red–brown for the lava.
+
 
 
 # Set the border thickness.
@@ -96,11 +102,12 @@ levels = [
         ],
         "special_collectible": (975, 585),
         "timer": 30,
-        "background_color": WHITE,
-        "platform_color": GREEN,
-        "collectible_color": YELLOW,
-        "special_collectible_color": PURPLE,
-        "lava_color": RED
+        "gravity": 0.5,
+        "background_color": DARK_BROWN,
+        "platform_color": CHOCOLATE,
+        "collectible_color": GOLDENROD,
+        "special_collectible_color": DARK_ORANGE,
+        "lava_color": FIREBRICK
     },
     {
         "platforms": [
@@ -120,6 +127,7 @@ levels = [
         ],
         "special_collectible": (825, 485),
         "timer": 25,
+        "gravity": 0.3,
         "background_color": (230, 230, 255),  # light blueish
         "platform_color": (0, 200, 0),
         "collectible_color": (255, 200, 0),
@@ -144,6 +152,7 @@ levels = [
         ],
         "special_collectible": (1280, 465),
         "timer": 20,
+        "gravity": 0.5,
         "background_color": (200, 255, 200),  # light green
         "platform_color": FOREST_GREEN,
         "collectible_color": (255, 215, 0),     # gold
@@ -168,6 +177,7 @@ levels = [
         ],
         "special_collectible": (1265, 485),
         "timer": 18,
+        "gravity": 0.5,
         "background_color": (240, 230, 140),  # khaki
         "platform_color": (139, 69, 19),        # saddlebrown
         "collectible_color": (255, 140, 0),       # dark orange
@@ -192,6 +202,7 @@ levels = [
         ],
         "special_collectible": (1050, 505),
         "timer": 16,
+        "gravity": 0.5,
         "background_color": (255, 228, 225),  # misty rose
         "platform_color": (205, 92, 92),        # indian red
         "collectible_color": (255, 160, 122),     # light salmon
@@ -216,6 +227,7 @@ levels = [
         ],
         "special_collectible": (1115, 515),
         "timer": 14,
+        "gravity": 0.5,
         "background_color": (224, 255, 255),  # light cyan
         "platform_color": (32, 178, 170),       # light sea green
         "collectible_color": (0, 206, 209),       # turquoise
@@ -240,6 +252,7 @@ levels = [
         ],
         "special_collectible": (1050, 525),
         "timer": 12,
+        "gravity": 0.5,
         "background_color": HONEYDEW,
         "platform_color": (60, 179, 113),  # medium sea green
         "collectible_color": (173, 255, 47),  # green yellow
@@ -263,7 +276,8 @@ levels = [
             (945, 535)
         ],
         "special_collectible": (1105, 465),
-        "timer": 10,
+        "timer": 18,
+        "gravity": 0.5,
         "background_color": LAVENDER_BLUSH,
         "platform_color": (218, 112, 214),  # orchid
         "collectible_color": (255, 182, 193),  # light pink
@@ -287,7 +301,8 @@ levels = [
             (990, 545)
         ],
         "special_collectible": (1150, 485),
-        "timer": 8,
+        "timer": 18,
+        "gravity": 0.5,
         "background_color": ALICE_BLUE,
         "platform_color": STEEL_BLUE,
         "collectible_color": (255, 215, 0),  # gold
@@ -311,7 +326,8 @@ levels = [
             (995, 555)
         ],
         "special_collectible": (1155, 505),
-        "timer": 6,
+        "timer": 16,
+        "gravity": 0.5,
         "background_color": BEIGE,
         "platform_color": DARK_SLATE_GRAY,
         "collectible_color": (255, 105, 180),  # hot pink
@@ -335,7 +351,8 @@ levels = [
             (1150, 585)
         ],
         "special_collectible": (1400, 535),
-        "timer": 5,
+        "timer": 15,
+        "gravity": 0.5,
         "background_color": MIDNIGHT_BLUE,
         "platform_color": CORNFLOWER_BLUE,
         "collectible_color": LIGHT_CORAL,
@@ -360,7 +377,8 @@ levels = [
             (1195, 565)
         ],
         "special_collectible": (1450, 485),
-        "timer": 4,
+        "timer": 14,
+        "gravity": 0.5,
         "background_color": DARK_ORCHID,
         "platform_color": (218, 112, 214),  # Orchid
         "collectible_color": (255, 182, 193), # Light Pink
@@ -385,7 +403,8 @@ levels = [
             (920, 555)
         ],
         "special_collectible": (1090, 465),
-        "timer": 3,
+        "timer": 13,
+        "gravity": 0.5,
         "background_color": SLATE_GRAY,
         "platform_color": SLATE_BLUE,
         "collectible_color": GOLD,
@@ -410,7 +429,8 @@ levels = [
             (885, 535)
         ],
         "special_collectible": (1050, 465),
-        "timer": 2.5,
+        "timer": 12,
+        "gravity": 0.5,
         "background_color": LIGHT_SKY_BLUE,
         "platform_color": MEDIUM_SEA_GREEN,
         "collectible_color": PALE_GOLDENROD,
@@ -435,7 +455,8 @@ levels = [
             (850, 525)
         ],
         "special_collectible": (1010, 455),
-        "timer": 2,
+        "timer": 12,
+        "gravity": 0.5,
         "background_color": DIM_GRAY,
         "platform_color": LIGHT_SLATE_GRAY,
         "collectible_color": CHARTREUSE,
@@ -454,7 +475,7 @@ def total_normal_collectibles (level_config):
 
 class Player (pygame.sprite.Sprite):
 
-    def __init__ (self, x, y):
+    def __init__ (self, x, y, gravity=0.5):
 
         super().__init__()
         self.width = 30
@@ -467,21 +488,23 @@ class Player (pygame.sprite.Sprite):
         self.speed = 5
         self.jump_strength = 12
         self.on_ground = False
+        self.gravity = gravity  # Store gravity for this instance
 
 
-    def update (self, platforms):
-
+    def update(self, platforms):
+        
         keys = pygame.key.get_pressed()
         self.velocity_x = 0
         if keys[pygame.K_LEFT]:
             self.velocity_x = -self.speed
         if keys[pygame.K_RIGHT]:
             self.velocity_x = self.speed
-        if keys[pygame.K_SPACE] and self.on_ground:
+        if (keys[pygame.K_SPACE] or keys[pygame.K_UP]) and self.on_ground:
             self.velocity_y = -self.jump_strength
             self.on_ground = False
 
-        self.velocity_y += GRAVITY
+        # Use the instance's gravity rather than a global constant.
+        self.velocity_y += self.gravity
 
         # Horizontal movement and collisions
         self.rect.x += self.velocity_x
@@ -553,8 +576,7 @@ class SpecialCollectible (Collectible):
 
 
 
-def run_level (level_config, level_number):
-
+def run_level(level_config, level_number):
     # Retrieve custom colors from the level config (or use defaults)
     bg_color       = level_config.get("background_color", WHITE)
     plat_color     = level_config.get("platform_color", GREEN)
@@ -594,7 +616,8 @@ def run_level (level_config, level_number):
 
     # Place the player on the first safe platform
     start_plat = platform_list[0]
-    player = Player(start_plat.rect.x + 10, start_plat.rect.y - 30)
+    # Create the player and set gravity from level_config.
+    player = Player(start_plat.rect.x + 10, start_plat.rect.y - 30, gravity=level_config.get("gravity", GRAVITY))
     all_sprites.add(player)
 
     # Level parameters
@@ -612,7 +635,6 @@ def run_level (level_config, level_number):
     level_lose = False
 
     while level_running:
-
         CLOCK.tick(FPS)
         current_ticks = pygame.time.get_ticks()
         elapsed_seconds = (current_ticks - start_ticks) / 1000
@@ -665,11 +687,18 @@ def run_level (level_config, level_number):
                 over_text = MESSAGE_FONT.render("Game Over!", True, RED)
                 text_rect = over_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
                 SCREEN.blit(over_text, text_rect)
-                restart_button = pygame.Rect(SCREEN_WIDTH // 2 - 75, SCREEN_HEIGHT // 2 + 60, 150, 40)
-                pygame.draw.rect(SCREEN, BLUE, restart_button)
-                restart_text = FONT.render("Restart", True, WHITE)
-                restart_text_rect = restart_text.get_rect(center=restart_button.center)
-                SCREEN.blit(restart_text, restart_text_rect)
+                
+                # Create two buttons: one for restarting the same level and one for restarting the game from level 1.
+                restart_level_button = pygame.Rect(SCREEN_WIDTH//2 - 200, SCREEN_HEIGHT//2 + 60, 150, 40)
+                restart_game_button = pygame.Rect(SCREEN_WIDTH//2 + 50, SCREEN_HEIGHT//2 + 60, 150, 40)
+                pygame.draw.rect(SCREEN, BLUE, restart_level_button)
+                pygame.draw.rect(SCREEN, BLUE, restart_game_button)
+                
+                restart_level_text = FONT.render("Restart Level", True, WHITE)
+                restart_game_text = FONT.render("Restart Game", True, WHITE)
+                SCREEN.blit(restart_level_text, restart_level_text.get_rect(center=restart_level_button.center))
+                SCREEN.blit(restart_game_text, restart_game_text.get_rect(center=restart_game_button.center))
+                
                 pygame.display.flip()
 
                 waiting = True
@@ -680,10 +709,16 @@ def run_level (level_config, level_number):
                             pygame.quit()
                             sys.exit()
                         if event.type == pygame.MOUSEBUTTONDOWN:
-                            if restart_button.collidepoint(pygame.mouse.get_pos()):
+                            mouse_pos = pygame.mouse.get_pos()
+                            if restart_level_button.collidepoint(mouse_pos):
+                                return "restart_level"
+                            if restart_game_button.collidepoint(mouse_pos):
                                 return "lose"
+                        # New key press check for spacebar or enter.
+                        if event.type == pygame.KEYDOWN:
+                            if event.key in (pygame.K_SPACE, pygame.K_RETURN):
+                                return "restart_level"
         else:
-
             SCREEN.fill(bg_color)
             all_sprites.draw(SCREEN)
             # UI elements: timer, collectibles counter, level number.
@@ -702,23 +737,15 @@ def run_level (level_config, level_number):
     return "lose"
 
 
-
-def main ():
-
+def main():
     current_level_index = 0
-
     while True:
-
         result = run_level(levels[current_level_index], current_level_index + 1)
-
         if result == "win":
-            
+            # If final level is complete, show final win screen with restart button.
             if current_level_index == len(levels) - 1:
-
                 finished = False
-
                 while not finished:
-
                     SCREEN.fill(WHITE)
                     pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
                     final_text = MESSAGE_FONT.render("You Win the Game!", True, BLUE)
@@ -730,7 +757,6 @@ def main ():
                     restart_text_rect = restart_text.get_rect(center=restart_button.center)
                     SCREEN.blit(restart_text, restart_text_rect)
                     pygame.display.flip()
-
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             pygame.quit()
@@ -739,13 +765,13 @@ def main ():
                             if restart_button.collidepoint(pygame.mouse.get_pos()):
                                 finished = True
                                 current_level_index = 0
-
             else:
                 current_level_index += 1
-
         elif result == "lose":
-
             current_level_index = 0
+        elif result == "restart_level":
+            # Do not change current_level_index so the same level restarts.
+            continue
 
 
 
