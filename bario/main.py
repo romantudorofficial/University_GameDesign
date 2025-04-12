@@ -36,6 +36,29 @@ STEEL_BLUE      = (70, 130, 180)
 DARK_SLATE_GRAY = (47, 79, 79)
 SADDLE_BROWN    = (139, 69, 19)
 
+MIDNIGHT_BLUE    = (25, 25, 112)
+CORNFLOWER_BLUE  = (100, 149, 237)
+MEDIUM_PURPLE    = (147, 112, 219)
+LIGHT_CORAL      = (240, 128, 128)
+ORANGE_RED       = (255, 69, 0)
+
+DARK_ORCHID      = (153, 50, 204)
+
+SLATE_GRAY       = (112, 128, 144)
+SLATE_BLUE       = (106, 90, 205)
+GOLD             = (255, 215, 0)
+DEEP_SKY_BLUE    = (0, 191, 255)
+
+LIGHT_SKY_BLUE   = (135, 206, 250)
+MEDIUM_SEA_GREEN = (60, 179, 113)
+PALE_GOLDENROD   = (238, 232, 170)
+MEDIUM_TURQUOISE = (72, 209, 204)
+
+DIM_GRAY         = (105, 105, 105)
+LIGHT_SLATE_GRAY = (119, 136, 153)
+CHARTREUSE       = (127, 255, 0)
+FUCHSIA          = (255, 0, 255)
+
 
 
 # Set the border thickness.
@@ -294,6 +317,130 @@ levels = [
         "collectible_color": (255, 105, 180),  # hot pink
         "special_collectible_color": (138, 43, 226),  # blue violet
         "lava_color": (128, 0, 0)             # maroon
+    },
+    {
+        "platforms": [
+            (100, 800, 100, 20),
+            (350, 750, 100, 20),
+            (600, 700, 100, 20),
+            (850, 650, 100, 20),
+            (1100, 600, 100, 20),
+            (1350, 550, 100, 20)
+        ],
+        "collectibles": [
+            (150, 785),
+            (400, 735),
+            (650, 685),
+            (900, 635),
+            (1150, 585)
+        ],
+        "special_collectible": (1400, 535),
+        "timer": 5,
+        "background_color": MIDNIGHT_BLUE,
+        "platform_color": CORNFLOWER_BLUE,
+        "collectible_color": LIGHT_CORAL,
+        "special_collectible_color": MEDIUM_PURPLE,
+        "lava_color": ORANGE_RED
+    },
+    # Level 12
+    {
+        "platforms": [
+            (150, 780, 90, 20),
+            (400, 730, 90, 20),
+            (650, 680, 90, 20),
+            (900, 630, 90, 20),
+            (1150, 580, 90, 20),
+            (1400, 530, 90, 20)
+        ],
+        "collectibles": [
+            (195, 765),
+            (445, 715),
+            (695, 665),
+            (945, 615),
+            (1195, 565)
+        ],
+        "special_collectible": (1450, 485),
+        "timer": 4,
+        "background_color": DARK_ORCHID,
+        "platform_color": (218, 112, 214),  # Orchid
+        "collectible_color": (255, 182, 193), # Light Pink
+        "special_collectible_color": (199, 21, 133),  # Medium Violet Red
+        "lava_color": (139, 0, 0)  # Dark Red
+    },
+    # Level 13
+    {
+        "platforms": [
+            (200, 760, 80, 20),
+            (370, 710, 80, 20),
+            (540, 660, 80, 20),
+            (710, 610, 80, 20),
+            (880, 560, 80, 20),
+            (1050, 510, 80, 20)
+        ],
+        "collectibles": [
+            (240, 745),
+            (410, 700),
+            (580, 655),
+            (750, 605),
+            (920, 555)
+        ],
+        "special_collectible": (1090, 465),
+        "timer": 3,
+        "background_color": SLATE_GRAY,
+        "platform_color": SLATE_BLUE,
+        "collectible_color": GOLD,
+        "special_collectible_color": DEEP_SKY_BLUE,
+        "lava_color": (220, 20, 60)  # Crimson
+    },
+    # Level 14
+    {
+        "platforms": [
+            (250, 750, 70, 20),
+            (400, 700, 70, 20),
+            (550, 650, 70, 20),
+            (700, 600, 70, 20),
+            (850, 550, 70, 20),
+            (1000, 500, 70, 20)
+        ],
+        "collectibles": [
+            (285, 735),
+            (435, 685),
+            (585, 635),
+            (735, 585),
+            (885, 535)
+        ],
+        "special_collectible": (1050, 465),
+        "timer": 2.5,
+        "background_color": LIGHT_SKY_BLUE,
+        "platform_color": MEDIUM_SEA_GREEN,
+        "collectible_color": PALE_GOLDENROD,
+        "special_collectible_color": MEDIUM_TURQUOISE,
+        "lava_color": (178, 34, 34)  # Firebrick
+    },
+    # Level 15
+    {
+        "platforms": [
+            (300, 740, 60, 20),
+            (430, 690, 60, 20),
+            (560, 640, 60, 20),
+            (690, 590, 60, 20),
+            (820, 540, 60, 20),
+            (950, 490, 60, 20)
+        ],
+        "collectibles": [
+            (330, 725),
+            (460, 675),
+            (590, 625),
+            (720, 575),
+            (850, 525)
+        ],
+        "special_collectible": (1010, 455),
+        "timer": 2,
+        "background_color": DIM_GRAY,
+        "platform_color": LIGHT_SLATE_GRAY,
+        "collectible_color": CHARTREUSE,
+        "special_collectible_color": FUCHSIA,
+        "lava_color": (139, 0, 0)  # Dark Red
     }
 ]
 
