@@ -41,9 +41,5 @@
 - improved game
 - added 13 more levels
 - added possibility to start again the game from the same level if you lose
+- added main screen
 - improved design
-
-
-### TO ADD:
-
-- optimize timer duration and platform positions
