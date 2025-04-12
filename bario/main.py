@@ -27,6 +27,15 @@ RED     = (255, 50, 50)
 YELLOW  = (255, 255, 0)
 PURPLE  = (128, 0, 128)
 
+ALICE_BLUE      = (240, 248, 255)
+HONEYDEW        = (240, 255, 240)
+LAVENDER_BLUSH  = (255, 240, 245)
+BEIGE           = (245, 245, 220)
+FOREST_GREEN    = (34, 139, 34)
+STEEL_BLUE      = (70, 130, 180)
+DARK_SLATE_GRAY = (47, 79, 79)
+SADDLE_BROWN    = (139, 69, 19)
+
 
 
 # Set the border thickness.
@@ -88,11 +97,203 @@ levels = [
         ],
         "special_collectible": (825, 485),
         "timer": 25,
-        "background_color": (230, 230, 255),
+        "background_color": (230, 230, 255),  # light blueish
         "platform_color": (0, 200, 0),
         "collectible_color": (255, 200, 0),
         "special_collectible_color": (200, 0, 200),
         "lava_color": (200, 0, 0)
+    },
+    {
+        "platforms": [
+            (150, 680, 140, 20),
+            (350, 640, 140, 20),
+            (550, 600, 140, 20),
+            (750, 560, 140, 20),
+            (950, 520, 140, 20),
+            (1150, 480, 140, 20)
+        ],
+        "collectibles": [
+            (220, 665),
+            (420, 625),
+            (620, 585),
+            (820, 545),
+            (1020, 505)
+        ],
+        "special_collectible": (1280, 465),
+        "timer": 20,
+        "background_color": (200, 255, 200),  # light green
+        "platform_color": FOREST_GREEN,
+        "collectible_color": (255, 215, 0),     # gold
+        "special_collectible_color": (138, 43, 226),  # blue violet
+        "lava_color": (255, 69, 0)              # orange red
+    },
+    {
+        "platforms": [
+            (200, 700, 130, 20),
+            (400, 660, 130, 20),
+            (600, 620, 130, 20),
+            (800, 580, 130, 20),
+            (1000, 540, 130, 20),
+            (1200, 500, 130, 20)
+        ],
+        "collectibles": [
+            (265, 685),
+            (465, 645),
+            (665, 605),
+            (865, 565),
+            (1065, 525)
+        ],
+        "special_collectible": (1265, 485),
+        "timer": 18,
+        "background_color": (240, 230, 140),  # khaki
+        "platform_color": (139, 69, 19),        # saddlebrown
+        "collectible_color": (255, 140, 0),       # dark orange
+        "special_collectible_color": (75, 0, 130),# indigo
+        "lava_color": (178, 34, 34)             # firebrick
+    },
+    {
+        "platforms": [
+            (150, 720, 120, 20),
+            (320, 680, 120, 20),
+            (490, 640, 120, 20),
+            (660, 600, 120, 20),
+            (830, 560, 120, 20),
+            (1000, 520, 120, 20)
+        ],
+        "collectibles": [
+            (210, 705),
+            (370, 665),
+            (540, 625),
+            (710, 585),
+            (880, 545)
+        ],
+        "special_collectible": (1050, 505),
+        "timer": 16,
+        "background_color": (255, 228, 225),  # misty rose
+        "platform_color": (205, 92, 92),        # indian red
+        "collectible_color": (255, 160, 122),     # light salmon
+        "special_collectible_color": (199, 21, 133),  # medium violet red
+        "lava_color": (220, 20, 60)             # crimson
+    },
+    {
+        "platforms": [
+            (200, 730, 110, 20),
+            (370, 690, 110, 20),
+            (540, 650, 110, 20),
+            (710, 610, 110, 20),
+            (880, 570, 110, 20),
+            (1050, 530, 110, 20)
+        ],
+        "collectibles": [
+            (265, 715),
+            (435, 675),
+            (605, 635),
+            (775, 595),
+            (945, 555)
+        ],
+        "special_collectible": (1115, 515),
+        "timer": 14,
+        "background_color": (224, 255, 255),  # light cyan
+        "platform_color": (32, 178, 170),       # light sea green
+        "collectible_color": (0, 206, 209),       # turquoise
+        "special_collectible_color": (72, 61, 139), # dark slate blue
+        "lava_color": (139, 0, 0)               # dark red
+    },
+    {
+        "platforms": [
+            (250, 740, 100, 20),
+            (400, 700, 100, 20),
+            (550, 660, 100, 20),
+            (700, 620, 100, 20),
+            (850, 580, 100, 20),
+            (1000, 540, 100, 20)
+        ],
+        "collectibles": [
+            (300, 725),
+            (450, 685),
+            (600, 645),
+            (750, 605),
+            (900, 565)
+        ],
+        "special_collectible": (1050, 525),
+        "timer": 12,
+        "background_color": HONEYDEW,
+        "platform_color": (60, 179, 113),  # medium sea green
+        "collectible_color": (173, 255, 47),  # green yellow
+        "special_collectible_color": (138, 43, 226),  # blue violet (reuse or change as desired)
+        "lava_color": (165, 42, 42)           # brown
+    },
+    {
+        "platforms": [
+            (300, 750, 90, 20),
+            (450, 700, 90, 20),
+            (600, 650, 90, 20),
+            (750, 600, 90, 20),
+            (900, 550, 90, 20),
+            (1050, 500, 90, 20)
+        ],
+        "collectibles": [
+            (345, 735),
+            (495, 685),
+            (645, 635),
+            (795, 585),
+            (945, 535)
+        ],
+        "special_collectible": (1105, 465),
+        "timer": 10,
+        "background_color": LAVENDER_BLUSH,
+        "platform_color": (218, 112, 214),  # orchid
+        "collectible_color": (255, 182, 193),  # light pink
+        "special_collectible_color": (199, 21, 133),  # medium violet red
+        "lava_color": (255, 99, 71)           # tomato
+    },
+    {
+        "platforms": [
+            (350, 760, 80, 20),
+            (500, 710, 80, 20),
+            (650, 660, 80, 20),
+            (800, 610, 80, 20),
+            (950, 560, 80, 20),
+            (1100, 510, 80, 20)
+        ],
+        "collectibles": [
+            (390, 745),
+            (540, 695),
+            (690, 645),
+            (840, 595),
+            (990, 545)
+        ],
+        "special_collectible": (1150, 485),
+        "timer": 8,
+        "background_color": ALICE_BLUE,
+        "platform_color": STEEL_BLUE,
+        "collectible_color": (255, 215, 0),  # gold
+        "special_collectible_color": (75, 0, 130),  # indigo
+        "lava_color": SADDLE_BROWN
+    },
+    {
+        "platforms": [
+            (400, 770, 70, 20),
+            (540, 720, 70, 20),
+            (680, 670, 70, 20),
+            (820, 620, 70, 20),
+            (960, 570, 70, 20),
+            (1100, 520, 70, 20)
+        ],
+        "collectibles": [
+            (435, 755),
+            (575, 705),
+            (715, 655),
+            (855, 605),
+            (995, 555)
+        ],
+        "special_collectible": (1155, 505),
+        "timer": 6,
+        "background_color": BEIGE,
+        "platform_color": DARK_SLATE_GRAY,
+        "collectible_color": (255, 105, 180),  # hot pink
+        "special_collectible_color": (138, 43, 226),  # blue violet
+        "lava_color": (128, 0, 0)             # maroon
     }
 ]
 
