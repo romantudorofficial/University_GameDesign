@@ -64,7 +64,7 @@ CHOCOLATE      = (123, 63, 0)      # A medium–dark brown for the platforms.
 GOLDENROD      = (218, 165, 32)    # A warm mustard yellow for the collectibles.
 DARK_ORANGE    = (255, 140, 0)     # A deep, rich orange for the special collectible.
 FIREBRICK      = (178, 34, 34)     # A dark red–brown for the lava.
-
+COOL_RED = (200, 0, 0)
 
 
 # Set the border thickness.
@@ -84,74 +84,106 @@ MESSAGE_FONT = pygame.font.SysFont('Arial', 48)
 
 
 levels = [
+
+    # Level 1
     {
         "platforms": [
-            (100, 650, 150, 20),
-            (260, 640, 150, 20),
-            (420, 630, 150, 20),
-            (580, 620, 150, 20),
-            (740, 610, 150, 20),
-            (900, 600, 150, 20)
+            (100, 600, 1600, 20),
         ],
         "collectibles": [
-            (175, 635),
-            (335, 625),
-            (495, 615),
-            (655, 605),
-            (815, 595)
+            (200, 580),
+            (300, 580),
+            (400, 580),
+            (500, 580),
+            (600, 580),
+            (700, 580),
+            (800, 580),
+            (900, 580),
+            (1000, 580),
+            (1100, 580),
+            (1200, 580),
+            (1300, 580),
+            (1400, 580),
+            (1500, 580)
         ],
-        "special_collectible": (975, 585),
-        "timer": 30,
-        "gravity": 0.5,
-        "background_color": SADDLE_BROWN,
+        "special_collectible": (1600, 580),
+        "timer": 7,
+        "gravity": 0.6,
+        "background_color": PALE_GOLDENROD,
         "platform_color": DARK_SLATE_GRAY,
-        "collectible_color": GOLD,
-        "special_collectible_color": ORANGE_RED,
-        "lava_color": FIREBRICK
+        "collectible_color": DARK_BROWN,
+        "special_collectible_color": DARK_ORANGE,
+        "lava_color": COOL_RED
     },
+
+    # Level 2
     {
         "platforms": [
-            (100, 700, 150, 20),
-            (300, 660, 150, 20),
-            (500, 620, 150, 20),
-            (700, 580, 150, 20),
-            (900, 540, 150, 20),
-            (750, 500, 150, 20)
+            (100, 800, 150, 20),
+            (300, 700, 150, 20),
+            (500, 600, 150, 20),
+            (700, 500, 150, 20),
+            (900, 400, 150, 20),
+            (1100, 300, 150, 20),
+            (1300, 200, 150, 20),
+            (1500, 100, 150, 20)
         ],
         "collectibles": [
-            (175, 685),
-            (375, 645),
-            (575, 605),
-            (775, 565),
-            (975, 525)
+            (175, 785),
+            (375, 685),
+            (575, 585),
+            (775, 485),
+            (975, 385),
+            (1175, 285),
+            (1375, 185)
         ],
-        "special_collectible": (825, 485),
-        "timer": 25,
-        "gravity": 0.3,
-        "background_color": (230, 230, 255),  # light blueish
+        "special_collectible": (1575, 80),
+        "timer": 8,
+        "gravity": 0.6,
+        "background_color": (230, 230, 255),
         "platform_color": (0, 200, 0),
         "collectible_color": (255, 200, 0),
         "special_collectible_color": (200, 0, 200),
         "lava_color": (200, 0, 0)
     },
+
+    # Level 3
     {
         "platforms": [
-            (150, 680, 140, 20),
-            (350, 640, 140, 20),
-            (550, 600, 140, 20),
-            (750, 560, 140, 20),
-            (950, 520, 140, 20),
-            (1150, 480, 140, 20)
+            (100, 800, 150, 20),
+            (300, 700, 150, 20),
+            (500, 600, 150, 20),
+            (700, 500, 150, 20),
+            (900, 400, 150, 20),
+            (1100, 300, 150, 20),
+            (1300, 200, 150, 20),
+            (1500, 100, 150, 20),
+            (1600, 800, 150, 20),
+            (1400, 700, 150, 20),
+            (1200, 600, 150, 20),
+            (1000, 500, 150, 20),
+            (600, 300, 150, 20),
+            (400, 200, 150, 20),
+            (200, 100, 150, 20)
         ],
         "collectibles": [
-            (220, 665),
-            (420, 625),
-            (620, 585),
-            (820, 545),
-            (1020, 505)
+            (175, 785),
+            (375, 685),
+            (575, 585),
+            (775, 485),
+            (975, 385),
+            (1175, 285),
+            (1375, 185),
+            (1575, 85),
+            (1675, 785),
+            (1475, 685),
+            (1275, 585),
+            (1075, 485),
+            (675, 285),
+            (475, 185)
         ],
-        "special_collectible": (1280, 465),
-        "timer": 20,
+        "special_collectible": (275, 85),
+        "timer": 17,
         "gravity": 0.5,
         "background_color": (200, 255, 200),  # light green
         "platform_color": FOREST_GREEN,
@@ -159,14 +191,19 @@ levels = [
         "special_collectible_color": (138, 43, 226),  # blue violet
         "lava_color": (255, 69, 0)              # orange red
     },
+
+    # Level 4
     {
         "platforms": [
-            (200, 700, 130, 20),
-            (400, 660, 130, 20),
-            (600, 620, 130, 20),
-            (800, 580, 130, 20),
-            (1000, 540, 130, 20),
-            (1200, 500, 130, 20)
+            (200, 800, 130, 20),
+            (400, 750, 130, 20),
+            (600, 700, 130, 20),
+            (800, 650, 130, 20),
+            (1000, 600, 130, 20),
+            (1200, 550, 130, 20),
+            (1400, 500, 130, 20),
+            (1600, 450, 130, 20),
+            (1800, 400, 130, 20)
         ],
         "collectibles": [
             (265, 685),
@@ -184,6 +221,8 @@ levels = [
         "special_collectible_color": (75, 0, 130),# indigo
         "lava_color": (178, 34, 34)             # firebrick
     },
+
+    # Level 5
     {
         "platforms": [
             (150, 720, 120, 20),
@@ -759,38 +798,142 @@ def run_level(level_config, level_number):
     return "lose"
 
 
+def main_menu():
+    """
+    Displays the main menu with two buttons: "Play Normal" and "Level Select".
+    Returns:
+      - "normal" if "Play Normal" is selected.
+      - "select" if "Level Select" is selected.
+    """
+    while True:
+        SCREEN.fill(WHITE)
+        pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
+        
+        title_text = MESSAGE_FONT.render("Bario", True, BLUE)
+        title_rect = title_text.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 150))
+        SCREEN.blit(title_text, title_rect)
+        
+        # Define buttons
+        play_button = pygame.Rect(SCREEN_WIDTH//2 - 150, SCREEN_HEIGHT//2 - 50, 300, 50)
+        select_button = pygame.Rect(SCREEN_WIDTH//2 - 150, SCREEN_HEIGHT//2 + 20, 300, 50)
+        
+        pygame.draw.rect(SCREEN, BLUE, play_button)
+        pygame.draw.rect(SCREEN, BLUE, select_button)
+        
+        play_text = FONT.render("Play Normal", True, WHITE)
+        select_text = FONT.render("Level Select", True, WHITE)
+        
+        SCREEN.blit(play_text, play_text.get_rect(center=play_button.center))
+        SCREEN.blit(select_text, select_text.get_rect(center=select_button.center))
+        
+        pygame.display.flip()
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                if play_button.collidepoint(mouse_pos):
+                    wait_for_key_release()
+                    return "normal"
+                if select_button.collidepoint(mouse_pos):
+                    wait_for_key_release()
+                    return "select"
+            if event.type == pygame.KEYDOWN:
+                # Optionally, you could choose keys for menu selection
+                if event.key == pygame.K_n:
+                    wait_for_key_release()
+                    return "normal"
+                elif event.key == pygame.K_s:
+                    wait_for_key_release()
+                    return "select"
+        CLOCK.tick(FPS)
+
+def level_select_menu():
+    """
+    Displays 15 buttons (or however many levels are in the levels variable).
+    Returns the selected level index (0-indexed).
+    """
+    num_levels = len(levels)  # Assuming your global levels variable contains 15 levels.
+    # For layout, we display buttons in a grid – for instance, 5 per row.
+    buttons_per_row = 5
+    button_width = 150
+    button_height = 50
+    margin = 20
+    
+    while True:
+        SCREEN.fill(WHITE)
+        pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
+        
+        header_text = MESSAGE_FONT.render("Select Level", True, BLUE)
+        header_rect = header_text.get_rect(center=(SCREEN_WIDTH//2, 80))
+        SCREEN.blit(header_text, header_rect)
+        
+        level_buttons = []
+        for i in range(num_levels):
+            row = i // buttons_per_row
+            col = i % buttons_per_row
+            # Calculate button positions centered on screen.
+            total_width = buttons_per_row * button_width + (buttons_per_row - 1) * margin
+            start_x = (SCREEN_WIDTH - total_width) // 2
+            x = start_x + col * (button_width + margin)
+            y = 150 + row * (button_height + margin)
+            btn_rect = pygame.Rect(x, y, button_width, button_height)
+            level_buttons.append(btn_rect)
+            pygame.draw.rect(SCREEN, BLUE, btn_rect)
+            level_text = FONT.render(f"Level {i+1}", True, WHITE)
+            SCREEN.blit(level_text, level_text.get_rect(center=btn_rect.center))
+        
+        pygame.display.flip()
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                for i, btn in enumerate(level_buttons):
+                    if btn.collidepoint(mouse_pos):
+                        wait_for_key_release()
+                        return i  # Return level index (0-indexed)
+            if event.type == pygame.KEYDOWN:
+                # Optional: allow key selection for levels 1-9 via number keys, etc.
+                pass
+        
+        CLOCK.tick(FPS)
+
+
 def main():
-    current_level_index = 0
+    # Show main menu first.
+    menu_choice = main_menu()
+    if menu_choice == "normal":
+        current_level_index = 0
+    else:  # "select"
+        # Open level select menu.
+        current_level_index = level_select_menu()
+    
     while True:
         result = run_level(levels[current_level_index], current_level_index + 1)
         if result == "win":
             if current_level_index == len(levels) - 1:
                 finished = False
                 while not finished:
-                    # Fill the screen with background (using WHITE or any default) then draw the border.
                     SCREEN.fill(WHITE)
                     pygame.draw.rect(SCREEN, BLACK, (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), BORDER_THICKNESS)
-                    
-                    # Display final win message.
                     final_text = MESSAGE_FONT.render("You Win the Game!", True, BLUE)
                     text_rect = final_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 40))
                     SCREEN.blit(final_text, text_rect)
                     
-                    # Create two buttons.
-                    # Left button: Restart Game (from beginning)
+                    # Final win screen buttons.
                     restart_game_button  = pygame.Rect(SCREEN_WIDTH//2 - 200, SCREEN_HEIGHT//2 + 60, 150, 40)
-                    # Right button: Replay Last Level
                     restart_level_button = pygame.Rect(SCREEN_WIDTH//2 + 50, SCREEN_HEIGHT//2 + 60, 150, 40)
-                    
                     pygame.draw.rect(SCREEN, BLUE, restart_game_button)
                     pygame.draw.rect(SCREEN, BLUE, restart_level_button)
-                    
                     restart_game_text  = FONT.render("Restart Game", True, WHITE)
                     restart_level_text = FONT.render("Replay Last", True, WHITE)
-                    
                     SCREEN.blit(restart_game_text, restart_game_text.get_rect(center=restart_game_button.center))
                     SCREEN.blit(restart_level_text, restart_level_text.get_rect(center=restart_level_button.center))
-                    
                     pygame.display.flip()
                     
                     for event in pygame.event.get():
@@ -802,28 +945,26 @@ def main():
                             if restart_game_button.collidepoint(mouse_pos):
                                 wait_for_key_release()
                                 finished = True
-                                current_level_index = 0  # Restart from beginning.
+                                current_level_index = 0
                             elif restart_level_button.collidepoint(mouse_pos):
                                 wait_for_key_release()
                                 finished = True
-                                # Keep current_level_index as-is to replay last level.
                         if event.type == pygame.KEYDOWN:
-                            # If ENTER is pressed, restart from beginning.
                             if event.key == pygame.K_RETURN:
                                 wait_for_key_release()
                                 finished = True
                                 current_level_index = 0
-                            # If SPACE is pressed, replay the last level.
                             elif event.key == pygame.K_SPACE:
                                 wait_for_key_release()
                                 finished = True
-                # End of final win branch.
+                # After final win, show the main menu again.
+                main()
+                return
             else:
                 current_level_index += 1
         elif result == "lose":
             current_level_index = 0
         elif result == "restart_level":
-            # Do not change current_level_index so the same level restarts.
             continue
 
 
