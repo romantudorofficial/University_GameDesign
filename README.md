@@ -14,8 +14,8 @@
 
 - open the "bario" folder
 - open the terminal
-- run the "python main.py" command
-
+- run the "python Bario.py" command to run the game
+- run the "python -m PyInstaller --onefile --windowed Bario.py" command to create an executable
 
 
 ## Work Progress
@@ -43,3 +43,11 @@
 - added possibility to start again the game from the same level if you lose
 - added main screen
 - improved design
+
+
+### Weeks 8 - 12:
+
+- improved game
+- adjusted platforms, collectibles, the timer
+- differentiated levels by creating difficulty
+- added executable
